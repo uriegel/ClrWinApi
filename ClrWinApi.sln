@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28606.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ClrWinApi", "ClrWinApi\ClrWinApi.fsproj", "{4BF4475F-E8DD-4335-8707-A53C7B85BD0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BF4475F-E8DD-4335-8707-A53C7B85BD0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BF4475F-E8DD-4335-8707-A53C7B85BD0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BF4475F-E8DD-4335-8707-A53C7B85BD0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BF4475F-E8DD-4335-8707-A53C7B85BD0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BB014CF-3342-494C-BAD4-03E31167639A}
+	EndGlobalSection
+EndGlobal
