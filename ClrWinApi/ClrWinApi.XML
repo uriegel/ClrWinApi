@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>ClrWinApi</name></assembly>
+<members>
+<member name="T:ClrWinApi.SHFILEOPSTRUCT">
+ <summary>
+ [StructLayout(LayoutKind.Sequential, CharSet=CharSet.Unicode)]
+ If you use the above you may encounter an invalid memory access exception (when using ANSI
+ or see nothing (when using unicode) when you use FOF_SIMPLEPROGRESS flag.
+ </summary>
+</member>
+<member name="F:ClrWinApi.FileOpFlags.NORECURSEREPARSE">
+ <summary>
+ Treat reparse points as objects, not containers
+ </summary>
+</member>
+<member name="F:ClrWinApi.FileOpFlags.WANTNUKEWARNING">
+ <summary>
+ During delete operation, 
+ warn if nuking instead of recycling (partially overrides FOF_NOCONFIRMATION)
+ </summary>
+</member>
+<member name="F:ClrWinApi.FileOpFlags.NO_CONNECTED_ELEMENTS">
+ <summary>
+ Don't operate on connected elements.
+ </summary>
+</member>
+<member name="F:ClrWinApi.FileOpFlags.NORECURSION">
+ <summary>
+ Don't recurse into directories.
+ </summary>
+</member>
+<member name="F:ClrWinApi.FileOpFlags.NOCOPYSECURITYATTRIBS">
+ <summary>
+ Dont copy NT file Security Attributes
+ </summary>
+</member>
+<member name="F:ClrWinApi.FileOpFlags.NOERRORUI">
+ <summary>
+ Don't put up error UI
+ </summary>
+</member>
+<member name="F:ClrWinApi.FileOpFlags.NOCONFIRMMKDIR">
+ <summary>
+ Don't confirm making any needed dirs
+ </summary>
+</member>
+<member name="F:ClrWinApi.FileOpFlags.SIMPLEPROGRESS">
+ <summary>
+ Don't show names of files
+ </summary>
+</member>
+<member name="F:ClrWinApi.FileOpFlags.FILESONLY">
+ <summary>
+ On *.*, do only files
+ </summary>
+</member>
+<member name="F:ClrWinApi.FileOpFlags.WANTMAPPINGHANDLE">
+ <summary>
+ Fill in SHFILEOPSTRUCT.hNameMappings.
+ Must be freed using SHFreeNameMappings
+ </summary>
+</member>
+<member name="F:ClrWinApi.FileOpFlags.NOCONFIRMATION">
+ <summary>
+ Don't prompt the user.
+ </summary>
+</member>
+<member name="F:ClrWinApi.FileOpFlags.SILENT">
+ <summary>
+ Don't create progress/report
+ </summary>
+</member>
+</members>
+</doc>
