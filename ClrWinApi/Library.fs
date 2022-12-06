@@ -144,6 +144,7 @@ type ShellExecuteInfo =
     val mutable HkeyClass: IntPtr
     val mutable HotKey: uint32
     val mutable Icon: IntPtr
+    val mutable Monitor: IntPtr
     val mutable Process: IntPtr
 
 let FileAttributeNormal = 0x80
@@ -157,4 +158,4 @@ extern UInt32 GetCurrentThreadId()
 [<DllImport("shell32.dll", CharSet = CharSet.Unicode)>]
 extern int SHFileOperation(SHFILEOPSTRUCT fileOp)
 [<DllImport("shell32.dll", CharSet = CharSet.Unicode, SetLastError = true)>]
-extern bool ShellExecuteEx(ShellExecuteInfo execInfo)
+extern bool ShellExecuteEx(ShellExecuteInfo& execInfo)
