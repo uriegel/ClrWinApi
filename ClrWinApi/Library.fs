@@ -159,3 +159,11 @@ extern UInt32 GetCurrentThreadId()
 extern int SHFileOperation(SHFILEOPSTRUCT fileOp)
 [<DllImport("shell32.dll", CharSet = CharSet.Unicode, SetLastError = true)>]
 extern bool ShellExecuteEx(ShellExecuteInfo& execInfo)
+
+TODO port to C#
+TODO version 2.0
+TODO static class Api
+TODO
+TODO using static Api
+TODO Namespace image.png
+TODO xml doku in nuget
