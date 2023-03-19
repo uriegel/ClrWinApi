@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28606.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ClrWinApi", "ClrWinApi\ClrWinApi.fsproj", "{4BF4475F-E8DD-4335-8707-A53C7B85BD0B}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ClrWinApi", "ClrWinApi\ClrWinApi.csproj", "{4BF4475F-E8DD-4335-8707-A53C7B85BD0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

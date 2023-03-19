@@ -2,24 +2,27 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>Preview</LangVersion>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>Uwe Riegel</Authors>
     <Company>Uwe Riegel</Company>
     <Description>P/Invoke for CLR Applications</Description>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/uriegel/ClrWinApi</PackageProjectUrl>
-    <Version>1.1.1</Version>
+    <Version>2.0.0</Version>
+    <PackageReleaseNotes></PackageReleaseNotes>
+		<FileVersion>2.0.0.0</FileVersion>
+		<AssemblyVersion>2.0.0.0</AssemblyVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>ClrWinApi.XML</DocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="Library.fs" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\LICENSE">
