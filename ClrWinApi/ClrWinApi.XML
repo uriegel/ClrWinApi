@@ -1,75 +1,177 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <doc>
-<assembly><name>ClrWinApi</name></assembly>
-<members>
-<member name="T:ClrWinApi.SHFILEOPSTRUCT">
- <summary>
- [StructLayout(LayoutKind.Sequential, CharSet=CharSet.Unicode)]
- If you use the above you may encounter an invalid memory access exception (when using ANSI
- or see nothing (when using unicode) when you use FOF_SIMPLEPROGRESS flag.
- </summary>
-</member>
-<member name="F:ClrWinApi.FileOpFlags.NORECURSEREPARSE">
- <summary>
- Treat reparse points as objects, not containers
- </summary>
-</member>
-<member name="F:ClrWinApi.FileOpFlags.WANTNUKEWARNING">
- <summary>
- During delete operation, 
- warn if nuking instead of recycling (partially overrides FOF_NOCONFIRMATION)
- </summary>
-</member>
-<member name="F:ClrWinApi.FileOpFlags.NO_CONNECTED_ELEMENTS">
- <summary>
- Don't operate on connected elements.
- </summary>
-</member>
-<member name="F:ClrWinApi.FileOpFlags.NORECURSION">
- <summary>
- Don't recurse into directories.
- </summary>
-</member>
-<member name="F:ClrWinApi.FileOpFlags.NOCOPYSECURITYATTRIBS">
- <summary>
- Dont copy NT file Security Attributes
- </summary>
-</member>
-<member name="F:ClrWinApi.FileOpFlags.NOERRORUI">
- <summary>
- Don't put up error UI
- </summary>
-</member>
-<member name="F:ClrWinApi.FileOpFlags.NOCONFIRMMKDIR">
- <summary>
- Don't confirm making any needed dirs
- </summary>
-</member>
-<member name="F:ClrWinApi.FileOpFlags.SIMPLEPROGRESS">
- <summary>
- Don't show names of files
- </summary>
-</member>
-<member name="F:ClrWinApi.FileOpFlags.FILESONLY">
- <summary>
- On *.*, do only files
- </summary>
-</member>
-<member name="F:ClrWinApi.FileOpFlags.WANTMAPPINGHANDLE">
- <summary>
- Fill in SHFILEOPSTRUCT.hNameMappings.
- Must be freed using SHFreeNameMappings
- </summary>
-</member>
-<member name="F:ClrWinApi.FileOpFlags.NOCONFIRMATION">
- <summary>
- Don't prompt the user.
- </summary>
-</member>
-<member name="F:ClrWinApi.FileOpFlags.SILENT">
- <summary>
- Don't create progress/report
- </summary>
-</member>
-</members>
+    <assembly>
+        <name>ClrWinApi</name>
+    </assembly>
+    <members>
+        <member name="F:ClrWinApi.FileOpFlags.SILENT">
+            <summary>
+            Don't create progress/report
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.FileOpFlags.NOCONFIRMATION">
+            <summary>
+            Don't prompt the user.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.FileOpFlags.WANTMAPPINGHANDLE">
+            <summary>
+            Fill in SHFILEOPSTRUCT.hNameMappings.
+            Must be freed using SHFreeNameMappings
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.FileOpFlags.FILESONLY">
+            <summary>
+            On *.*, do only files
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.FileOpFlags.SIMPLEPROGRESS">
+            <summary>
+            Don't show names of files
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.FileOpFlags.NOCONFIRMMKDIR">
+            <summary>
+            Don't confirm making any needed dirs
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.FileOpFlags.NOERRORUI">
+            <summary>
+            Don't put up error UI
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.FileOpFlags.NOCOPYSECURITYATTRIBS">
+            <summary>
+            Dont copy NT file Security Attributes
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.FileOpFlags.NORECURSION">
+            <summary>
+            Don't recurse into directories.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.FileOpFlags.NO_CONNECTED_ELEMENTS">
+            <summary>
+            Don't operate on connected elements.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.FileOpFlags.WANTNUKEWARNING">
+            <summary>
+            During delete operation, 
+            warn if nuking instead of recycling (partially overrides FOF_NOCONFIRMATION)
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.FileOpFlags.NORECURSEREPARSE">
+            <summary>
+            Treat reparse points as objects, not containers
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.ICON">
+            <summary>
+            get icon
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.DISPLAYNAME">
+            <summary>
+            get display name
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.TYPENAME">
+            <summary>
+            get type name
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.ATTRIBUTES">
+            <summary>
+            get attributes
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.ICONLOCATION">
+            <summary>
+            get icon location
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.EXETYPE">
+            <summary>
+            return exe type
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.SYSICONINDEX">
+            <summary>
+            get system icon index
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.LINKOVERLAY">
+            <summary>
+            put a link overlay on icon
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.SELECTED">
+            <summary>
+            show icon in selected state
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.ATTRSPECIFIED">
+            <summary>
+            get only specified attributes
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.LARGEICON">
+            <summary>
+            get large icon
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.SMALLICON">
+            <summary>
+            get small icon
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.OPENICON">
+            <summary>
+            get open icon
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.SHELLICONSIZE">
+            <summary>
+            get shell size icon
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.PIDL">
+            <summary>
+            pszPath is a pidl
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.USEFILEATTRIBUTES">
+            <summary>
+            use passed dwFileAttribute
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.ADDOVERLAYS">
+            <summary>
+            apply the appropriate overlays
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.SHGetFileInfoConstants.OVERLAYINDEX">
+            <summary>
+            Get the index of the overlay
+            </summary>
+        </member>
+        <member name="T:ClrWinApi.ShFileOPStruct">
+            <summary>
+            [StructLayout(LayoutKind.Sequential, CharSet=CharSet.Unicode)]
+            If you use the above you may encounter an invalid memory access exception (when using ANSI
+            or see nothing (when using unicode) when you use FOF_SIMPLEPROGRESS flag.
+            </summary>
+        </member>
+        <member name="F:ApiMessage.Window">
+            <summary>
+            Das Fenster, welches die Nachricht bekommen soll/hat
+            </summary>
+        </member>
+        <member name="F:ApiMessage.MessageType">
+            <summary>
+            Die Art der Nachricht
+            </summary>
+        </member>
+    </members>
 </doc>
