@@ -29,6 +29,5 @@ public struct ShellExecuteInfo
     public IntPtr HkeyClass;
     public uint HotKey;
     public IntPtr Icon;
-    public IntPtr Monitor;
     public IntPtr Process;
 }

@@ -44,6 +44,8 @@ public static class Api
     public static extern bool ShellExecuteEx(ref ShellExecuteInfo execInfo);
 
     [DllImport("shell32")]
+    public static extern IntPtr SHGetFileInfo(string pszPath, FileAttributes fileAttributes, ref ShFileInfo psfi, int cbFileInfo, SHGetFileInfoConstants uFlags);
+    [DllImport("shell32")]
     public static extern IntPtr SHGetFileInfo(string pszPath, int dwFileAttributes, ref ShFileInfo psfi, int cbFileInfo, SHGetFileInfoConstants uFlags);
 }
 
