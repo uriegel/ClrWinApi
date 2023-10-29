@@ -1,5 +1,7 @@
 using System.Runtime.InteropServices;
 
+namespace ClrWinApi;
+
 [StructLayout(LayoutKind.Sequential)]
 public struct ApiMessage
 {
@@ -10,9 +12,9 @@ public struct ApiMessage
     /// <summary>
     /// Die Art der Nachricht
     /// </summary>
-    public UInt32 MessageType;
+    public uint MessageType;
     public IntPtr WParam;
     public IntPtr LParam;
-    public UInt32 Time;
+    public uint Time;
     public MousePoint MousePoint;
 }

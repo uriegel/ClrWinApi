@@ -1,5 +1,7 @@
 using System.Runtime.InteropServices;
 
+namespace ClrWinApi;
+
 [StructLayout(LayoutKind.Sequential)]
 public struct MousePoint
 { 

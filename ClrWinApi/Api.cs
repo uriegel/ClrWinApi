@@ -49,4 +49,3 @@ public static class Api
     public static extern IntPtr SHGetFileInfo(string pszPath, int dwFileAttributes, ref ShFileInfo psfi, int cbFileInfo, SHGetFileInfoConstants uFlags);
 }
 
-// TODO let FileAttributeNormal = 0x80
