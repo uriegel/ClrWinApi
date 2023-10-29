@@ -11,10 +11,10 @@
     <Description>P/Invoke for CLR Applications</Description>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/uriegel/ClrWinApi</PackageProjectUrl>
-    <Version>2.1.1</Version>
+    <Version>2.2.0</Version>
     <PackageReleaseNotes>Bug fixed in ShellExecuteInfo</PackageReleaseNotes>
-		<FileVersion>2.1.1.0</FileVersion>
-		<AssemblyVersion>2.1.1.0</AssemblyVersion>
+		<FileVersion>2.2.0.0</FileVersion>
+		<AssemblyVersion>2.2.0.0</AssemblyVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <NoWarn>CS1591</NoWarn>
