@@ -156,21 +156,21 @@
             Get the index of the overlay
             </summary>
         </member>
+        <member name="F:ClrWinApi.ApiMessage.Window">
+            <summary>
+            Das Fenster, welches die Nachricht bekommen soll/hat
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.ApiMessage.MessageType">
+            <summary>
+            Die Art der Nachricht
+            </summary>
+        </member>
         <member name="T:ClrWinApi.ShFileOPStruct">
             <summary>
             [StructLayout(LayoutKind.Sequential, CharSet=CharSet.Unicode)]
             If you use the above you may encounter an invalid memory access exception (when using ANSI
             or see nothing (when using unicode) when you use FOF_SIMPLEPROGRESS flag.
-            </summary>
-        </member>
-        <member name="F:ApiMessage.Window">
-            <summary>
-            Das Fenster, welches die Nachricht bekommen soll/hat
-            </summary>
-        </member>
-        <member name="F:ApiMessage.MessageType">
-            <summary>
-            Die Art der Nachricht
             </summary>
         </member>
     </members>
