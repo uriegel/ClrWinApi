@@ -66,6 +66,42 @@
             Treat reparse points as objects, not containers
             </summary>
         </member>
+        <member name="F:ClrWinApi.ServicesControlManagerDesiredAccess.AllAccess">
+            <summary>
+            Includes STANDARD_RIGHTS_REQUIRED, in addition to all access rights in this table.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.ServicesControlManagerDesiredAccess.CreateService">
+            <summary>
+            Required to call the CreateService function to create a service object and add it to the database.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.ServicesControlManagerDesiredAccess.Connect">
+            <summary>
+            Required to connect to the service control manager.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.ServicesControlManagerDesiredAccess.EnumerateService">
+            <summary>
+            Required to call the EnumServicesStatus or EnumServicesStatusEx function to list the services that are in the database.
+            Required to call the NotifyServiceStatusChange function to receive notification when any service is created or deleted.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.ServicesControlManagerDesiredAccess.Lock">
+            <summary>
+            Required to call the LockServiceDatabase function to acquire a lock on the database.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.ServicesControlManagerDesiredAccess.ModifyBootConfig">
+            <summary>
+            Required to call the NotifyBootConfigStatus function.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.ServicesControlManagerDesiredAccess.QueryLockStatus">
+            <summary>
+            Required to call the QueryServiceLockStatus function to retrieve the lock status information for the database.
+            </summary>
+        </member>
         <member name="F:ClrWinApi.SHGetFileInfoConstants.ICON">
             <summary>
             get icon
