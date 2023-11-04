@@ -4,9 +4,40 @@ namespace ClrWinApi;
 
 public static class Api
 {
+    const uint ERROR_INSUFFICIENT_BUFFER = 122;
+
     [DllImport("Advapi32.dll", SetLastError = true)]
     public extern static int RegNotifyChangeKeyValue(IntPtr hKey, bool watchSubtree, int types, IntPtr hEvent, bool asynchronous);
+
+    [DllImport("advapi32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+    public static extern IntPtr OpenSCManager(string? machineName, string? databaseName, ServicesControlManagerDesiredAccess desiredAccess);
+
+    [DllImport("advapi32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+    public static extern IntPtr OpenService(IntPtr serviceControlManager, string serviceName, ServicesControlManagerDesiredAccess desiredAccess);
+
+    public static string? GetServiceDescription(IntPtr service)
+    {
+        var success = QueryServiceConfig2(service, ServiceConfig.Description, IntPtr.Zero, 0, out var bytesNeeded);
+        if (!success && Marshal.GetLastWin32Error() == ERROR_INSUFFICIENT_BUFFER)
+        {
+            var buffer = Marshal.AllocHGlobal((int)bytesNeeded);
+            success = QueryServiceConfig2(service, ServiceConfig.Description, buffer, bytesNeeded, out bytesNeeded);
+            if (!success)
+                return null;
+            var description = (ServiceDescription)Marshal.PtrToStructure(buffer, typeof(ServiceDescription));
+            Marshal.FreeHGlobal(buffer);
+            return description.Description;
+        }
+        else
+            return null;
+    }
+
+    [DllImport("advapi32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+    public static extern bool QueryServiceConfig2(IntPtr service, ServiceConfig infoLevel, IntPtr buffer, uint bufferSize, out uint bytesNeeded);
     
+    [DllImport("advapi32.dll", SetLastError = true)]
+    public static extern bool CloseServiceHandle(IntPtr ServiceControlObject);
+
     [DllImport("user32.dll", SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]    
     public static extern bool DestroyIcon(IntPtr hIcon);
