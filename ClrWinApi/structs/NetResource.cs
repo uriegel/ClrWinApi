@@ -9,8 +9,8 @@ public class NetResource
     public ResourceType ResourceType;
     public ResourceDisplaytype DisplayType;
     public int Usage;
-    public string LocalName;
-    public string RemoteName;
-    public string Comment;
-    public string Provider;
+    public string? LocalName;
+    public string? RemoteName;
+    public string? Comment;
+    public string? Provider;
 }
