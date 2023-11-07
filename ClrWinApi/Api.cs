@@ -78,5 +78,11 @@ public static class Api
     public static extern IntPtr SHGetFileInfo(string pszPath, FileAttributes fileAttributes, ref ShFileInfo psfi, int cbFileInfo, SHGetFileInfoConstants uFlags);
     [DllImport("shell32")]
     public static extern IntPtr SHGetFileInfo(string pszPath, int dwFileAttributes, ref ShFileInfo psfi, int cbFileInfo, SHGetFileInfoConstants uFlags);
+
+    [DllImport("mpr.dll")]
+    public static extern int WNetAddConnection2(NetResource netResource, string password, string username, int flags);
+
+    [DllImport("mpr.dll")]
+    public static extern int WNetCancelConnection2(string name, int flags, bool force);
 }
 
