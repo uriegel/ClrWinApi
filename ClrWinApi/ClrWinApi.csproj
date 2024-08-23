@@ -17,6 +17,7 @@
 		<AssemblyVersion>2.4.1.0</AssemblyVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
 
@@ -25,6 +26,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
     <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
