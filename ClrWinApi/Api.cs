@@ -84,5 +84,8 @@ public static class Api
 
     [DllImport("mpr.dll")]
     public static extern int WNetCancelConnection2(string name, int flags, bool force);
+
+    [DllImport("DwmApi")]
+    public static extern int DwmSetWindowAttribute(IntPtr hwnd, DwmWindowAttribute attr, int[] attrValue, int attrSize);
 }
 
