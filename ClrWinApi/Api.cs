@@ -50,9 +50,22 @@ public static class Api
     
     [DllImport("user32.dll")]
     public static extern IntPtr DispatchMessage([In] ref ApiMessage message);
+
+    [DllImport("user32.dll")]
+    public static extern int FindWindow(string className, string windowText);
     
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]   
+    public static extern bool ShowWindow(nint hwnd, ShowWindowFlag command);
+
+    [DllImport("user32.dll")]
+    public static extern nint FindWindowEx(nint parentHandle, nint childAfter, string? className, string? windowTitle);
+
+    [DllImport("user32.dll")]
+    public static extern int GetDesktopWindow();
+
     [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
-    public static extern IntPtr LoadLibrary(string filename);
+    public static extern nint LoadLibrary(string filename);
     
     [DllImport("kernel32.dll")]
     public static extern uint GetCurrentThreadId();

@@ -2,5 +2,16 @@ namespace ClrWinApi;
 
 public enum ShowWindowFlag
 {
-    Show = 5
+    Hide,
+    Normal,
+    Minimized,
+    Maximize,
+    NoActive,
+    Show,
+    Minimize,
+    MinNoActive,
+    Na,
+    Restore,
+    Default,
+    ForceMinimize 
 }
