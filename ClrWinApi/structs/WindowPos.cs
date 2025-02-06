@@ -5,8 +5,8 @@ namespace ClrWinApi;
 [StructLayout(LayoutKind.Sequential)]
 public struct WindowPos
 {
-    public IntPtr Wnd;
-    public IntPtr WndInsertAfter;
+    public nint Wnd;
+    public nint WndInsertAfter;
     public int X;
     public int Y;
     public int XWidth;

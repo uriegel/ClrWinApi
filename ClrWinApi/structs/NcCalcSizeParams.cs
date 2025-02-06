@@ -5,8 +5,8 @@ namespace ClrWinApi;
 [StructLayout(LayoutKind.Sequential)]
 public struct NcCalcSizeParams
 {
-    public static NcCalcSizeParams FromIntPtr(IntPtr intPtr)
-        => (NcCalcSizeParams)Marshal.PtrToStructure(intPtr, typeof(NcCalcSizeParams));
+    public static NcCalcSizeParams Fromnint(nint nint)
+        => (NcCalcSizeParams)Marshal.PtrToStructure(nint, typeof(NcCalcSizeParams));
 
     public Rect Rgrc0;
     public Rect Rgrc1;

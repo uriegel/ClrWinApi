@@ -5,7 +5,7 @@ namespace ClrWinApi;
 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
 public struct ShFileInfo 
 {
-    public IntPtr IconHandle;
+    public nint IconHandle;
     public int Icon;
     public uint Attributes;
 

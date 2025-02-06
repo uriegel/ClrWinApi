@@ -7,6 +7,6 @@ public delegate CopyProgressResult CopyProgressRoutine(
     long streamBytesTransferred,
     uint streamNumber,
     CopyProgressCallbackReason dwCallbackReason,
-    IntPtr sourceFile,
-    IntPtr destinationFile,
-    IntPtr data);
+    nint sourceFile,
+    nint destinationFile,
+    nint data);

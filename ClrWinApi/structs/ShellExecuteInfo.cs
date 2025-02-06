@@ -7,7 +7,7 @@ public struct ShellExecuteInfo
 {
     public int Size;
     public ShellExecuteFlag Mask;
-    public IntPtr Hwnd; 
+    public nint Hwnd; 
     
     [MarshalAs(UnmanagedType.LPWStr)]
     public string Verb;
@@ -21,13 +21,13 @@ public struct ShellExecuteInfo
     [MarshalAs(UnmanagedType.LPWStr)]
     public string Directory;
     public ShowWindowFlag Show;
-    public IntPtr InstApp;
-    public IntPtr IDList;
+    public nint InstApp;
+    public nint IDList;
     
     [MarshalAs(UnmanagedType.LPWStr)]
     public string Class;
-    public IntPtr HkeyClass;
+    public nint HkeyClass;
     public uint HotKey;
-    public IntPtr Icon;
-    public IntPtr Process;
+    public nint Icon;
+    public nint Process;
 }

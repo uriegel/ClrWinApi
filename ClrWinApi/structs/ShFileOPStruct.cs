@@ -10,7 +10,7 @@ namespace ClrWinApi;
 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
 public struct ShFileOPStruct
 {
-    public IntPtr Hwnd;
+    public nint Hwnd;
     public FileFuncFlags Func;
 
     [MarshalAs(UnmanagedType.LPWStr)]
@@ -24,7 +24,7 @@ public struct ShFileOPStruct
     [MarshalAs(UnmanagedType.Bool)]
     public bool AnyOperationsAborted;
 
-    public IntPtr NameMappings;
+    public nint NameMappings;
 
     [MarshalAs(UnmanagedType.LPWStr)]
     public string ProgressTitle;
