@@ -11,10 +11,10 @@
     <Description>P/Invoke for CLR Applications</Description>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/uriegel/ClrWinApi</PackageProjectUrl>
-    <Version>2.5.1</Version>
+    <Version>2.5.2</Version>
     <PackageReleaseNotes>IntPtr => nint</PackageReleaseNotes>
-		<FileVersion>2.5.1.0</FileVersion>
-		<AssemblyVersion>2.5.1.0</AssemblyVersion>
+		<FileVersion>2.5.2.0</FileVersion>
+		<AssemblyVersion>2.5.2.0</AssemblyVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>

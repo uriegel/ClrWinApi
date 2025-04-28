@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace ClrWinApi;
 
@@ -67,6 +68,18 @@ public static class Api
     [DllImport("user32.dll", SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]
 	public static extern bool IsZoomed(IntPtr hWnd);
+
+	[DllImport("user32.dll")]
+	public static extern bool GetKeyboardState(byte[] keyState);
+
+    [DllImport("user32.dll")]
+    public static extern uint MapVirtualKey(uint code, MapType mapType);
+    [DllImport("user32.dll")]
+    public static extern int ToUnicode(uint virtKey, uint scanCode, byte[] keyState,
+        [Out, MarshalAs(UnmanagedType.LPWStr, SizeParamIndex = 4)] 
+        StringBuilder buffer,
+        int bufferSize, uint flags);
+
 
     [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
     public static extern nint LoadLibrary(string filename);
