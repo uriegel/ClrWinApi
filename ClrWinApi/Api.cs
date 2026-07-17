@@ -109,6 +109,9 @@ public static class Api
     [DllImport("shell32")]
     public static extern nint SHGetFileInfo(string pszPath, int dwFileAttributes, ref ShFileInfo psfi, int cbFileInfo, SHGetFileInfoConstants uFlags);
 
+    [DllImport("shell32.dll")]
+    public static extern int SHGetImageList(ShilImageListSize size, ref Guid riid, [MarshalAs(UnmanagedType.Interface)] out IImageList? ppv);
+
     [DllImport("mpr.dll")]
     public static extern int WNetAddConnection2(NetResource netResource, string password, string username, int flags);
 
