@@ -74,11 +74,15 @@ public static class Api
 
     [DllImport("user32.dll")]
     public static extern uint MapVirtualKey(uint code, MapType mapType);
+    
     [DllImport("user32.dll")]
     public static extern int ToUnicode(uint virtKey, uint scanCode, byte[] keyState,
-        [Out, MarshalAs(UnmanagedType.LPWStr, SizeParamIndex = 4)] 
+        [Out, MarshalAs(UnmanagedType.LPWStr, SizeParamIndex = 4)]
         StringBuilder buffer,
         int bufferSize, uint flags);
+        
+    [DllImport("user32.dll")]
+    public static extern nint MonitorFromRect(ref Rect rect, MonitorDefaultTo defaultTo);
 
 
     [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
