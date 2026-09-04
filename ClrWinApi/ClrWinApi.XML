@@ -4,6 +4,67 @@
         <name>ClrWinApi</name>
     </assembly>
     <members>
+        <member name="F:ClrWinApi.AddConnectionFlags.UpdateProfile">
+            <summary>
+            The network resource connection should be remembered.
+            If this bit flag is set, the operating system automatically attempts to restore the connection when the user logs on.
+            The operating system remembers only successful connections that redirect local devices. It does not remember connections that are unsuccessful or deviceless connections. (A deviceless connection occurs when the lpLocalName member is NULL or points to an empty string.)
+            If this bit flag is clear, the operating system does not try to restore the connection when the user logs on.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.AddConnectionFlags.UpdateRecent">
+            <summary>
+            The network resource connection should not be put in the recent connection list.
+            If this flag is set and the connection is successfully added, the network resource connection will be put in the recent connection list only if it has a redirected local device associated with it.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.AddConnectionFlags.Temporary">
+            <summary>
+            The network resource connection should not be remembered.
+            If this flag is set, the operating system will not attempt to restore the connection when the user logs on again.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.AddConnectionFlags.Interactive">
+            <summary>
+            If this flag is set, the operating system may interact with the user for authentication purposes.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.AddConnectionFlags.Prompt">
+            <summary>
+            This flag instructs the system not to use any default settings for user names or passwords without offering the user the opportunity to supply an alternative. This flag is ignored unless CONNECT_INTERACTIVE is also set.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.AddConnectionFlags.Redirect">
+            <summary>
+            This flag forces the redirection of a local device when making the connection.
+            If the lpLocalName member of NETRESOURCE specifies a local device to redirect, this flag has no effect, because the operating system still attempts to redirect the specified device. When the operating system automatically chooses a local device, the dwType member must not be equal to RESOURCETYPE_ANY.
+            If this flag is not set, a local device is automatically chosen for redirection only if the network requires a local device to be redirected.
+            Windows Server 2003 and Windows XP:  When the system automatically assigns network drive letters, letters are assigned beginning with Z:, then Y:, and ending with C:. This reduces collision between per-logon drive letters (such as network drive letters) and global drive letters (such as disk drives). Note that earlier versions of Windows assigned drive letters beginning with C: and ending with Z:.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.AddConnectionFlags.CurrentMedia">
+            <summary>
+            If this flag is set, then the operating system does not start to use a new media to try to establish the connection (initiate a new dial up connection, for example).
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.AddConnectionFlags.CommandLine">
+            <summary>
+            If this flag is set, the operating system prompts the user for authentication using the command line instead of a graphical user interface (GUI). This flag is ignored unless CONNECT_INTERACTIVE is also set.
+            Windows XP:  This value is supported on Windows XP and later.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.AddConnectionFlags.CmdSaveCred">
+            <summary>
+            If this flag is set, and the operating system prompts for a credential, the credential should be saved by the credential manager. If the credential manager is disabled for the caller's logon session, or if the network provider does not support saving credentials, this flag is ignored. This flag is ignored unless CONNECT_INTERACTIVE is also set. This flag is also ignored unless you set the CONNECT_COMMANDLINE flag.
+            Windows XP:  This value is supported on Windows XP and later.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.AddConnectionFlags.CredReset">
+            <summary>
+            If this flag is set, and the operating system prompts for a credential, the credential is reset by the credential manager. If the credential manager is disabled for the caller's logon session, or if the network provider does not support saving credentials, this flag is ignored. This flag is also ignored unless you set the CONNECT_COMMANDLINE flag.
+            Windows Vista:  This value is supported on Windows Vista and later.
+            </summary>
+        </member>
         <member name="F:ClrWinApi.FileOpFlags.SILENT">
             <summary>
             Don't create progress/report
@@ -139,6 +200,79 @@
         <member name="F:ClrWinApi.ImageListDrawFlags.Async">
             <summary>
             Windows Vista and later. Draw the image if it is available in the cache. Do not extract it automatically. The called draw method returns E_PENDING to the calling component, which should then take an alternative action, such as, provide another image and queue a background task to force the image to be loaded via ForceImagePresent using the ILFIP_ALWAYS flag. The ILD_ASYNC flag then prevents the extraction operation from blocking the current thread and is especially important if a draw method is called from the user interface (UI) thread.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.MonitorDefaultTo.Nearest">
+            <summary>
+            Display monitor that is nearest to the rectangle.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.MonitorDefaultTo.Primary">
+            <summary>
+            The primary display monitor.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.PromptForWindowsCredentialsFlags.Generic">
+            <summary>
+            The caller is requesting that the credential provider return the user name and password in plain text.
+            This value cannot be combined with SECURE_PROMPT.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.PromptForWindowsCredentialsFlags.CheckBox">
+            <summary>
+            The Save check box is displayed in the dialog box.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.PromptForWindowsCredentialsFlags.AuthPackageOnly">
+            <summary>
+            Only credential providers that support the authentication package specified by the pulAuthPackage parameter should be enumerated.
+            This value cannot be combined with CREDUIWIN_IN_CRED_ONLY.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.PromptForWindowsCredentialsFlags.InCredOnly">
+            <summary>
+            Only the credentials specified by the pvInAuthBuffer parameter for the authentication package specified by the pulAuthPackage parameter should be enumerated.
+            If this flag is set, and the pvInAuthBuffer parameter is NULL, the function fails.
+            This value cannot be combined with CREDUIWIN_AUTHPACKAGE_ONLY.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.PromptForWindowsCredentialsFlags.EnumerateAdmins">
+            <summary>
+            Credential providers should enumerate only administrators. This value is intended for User Account Control (UAC) purposes only. We recommend that external callers not set this flag.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.PromptForWindowsCredentialsFlags.EnumerateCurrentUser">
+            <summary>
+            Only the incoming credentials for the authentication package specified by the pulAuthPackage parameter should be enumerated.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.PromptForWindowsCredentialsFlags.SecurePrompt">
+            <summary>
+            The credential dialog box should be displayed on the secure desktop. This value cannot be combined with CREDUIWIN_GENERIC.
+            Windows Vista:  This value is supported beginning with Windows Vista with SP1.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.PromptForWindowsCredentialsFlags.PrePrompting">
+            <summary>
+            The credential dialog box is invoked by the SspiPromptForCredentials function, and the client is prompted before a prior handshake. If SSPIPFC_NO_CHECKBOX is passed in the pvInAuthBuffer parameter, then the credential provider should not display the check box.
+            Windows Vista:  This value is supported beginning with Windows Vista with SP1.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.PromptForWindowsCredentialsFlags.Forty000">
+            <summary>
+            The credential provider will not pack the AAD authority name. This is only applied to Azure AD joined devices.
+            Windows 10, version 1607:  This value is supported beginning with Windows 10, version 1607.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.PromptForWindowsCredentialsFlags.Pack32Wow">
+            <summary>
+            The credential provider should align the credential BLOB pointed to by the ppvOutAuthBuffer parameter to a 32-bit boundary, even if the provider is running on a 64-bit system.
+            </summary>
+        </member>
+        <member name="F:ClrWinApi.PromptForWindowsCredentialsFlags.Eight0000000">
+            <summary>
+            Windows Hello credentials will be packed in a smart card auth buffer. This only applies to the face, fingerprint, and PIN credential providers.
+            Windows 10, version 1809:  This value is supported beginning with Windows 10, version 1809.
             </summary>
         </member>
         <member name="F:ClrWinApi.ServicesControlManagerDesiredAccess.AllAccess">

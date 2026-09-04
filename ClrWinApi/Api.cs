@@ -116,13 +116,22 @@ public static class Api
     [DllImport("shell32.dll")]
     public static extern int SHGetImageList(ShilImageListSize size, ref Guid riid, [MarshalAs(UnmanagedType.Interface)] out IImageList? ppv);
 
-    [DllImport("mpr.dll")]
-    public static extern int WNetAddConnection2(NetResource netResource, string password, string username, int flags);
+    [DllImport("mpr.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+    public static extern int WNetAddConnection2(NetResource netResource, string password, string username, AddConnectionFlags flags);
 
     [DllImport("mpr.dll")]
     public static extern int WNetCancelConnection2(string name, int flags, bool force);
 
     [DllImport("DwmApi")]
     public static extern int DwmSetWindowAttribute(nint hwnd, DwmWindowAttribute attr, int[] attrValue, int attrSize);
+
+    [DllImport("credui.dll", CharSet = CharSet.Unicode)]
+    public static extern int CredUIPromptForWindowsCredentials(ref CredUIInfo info, int authError, ref uint authPackage,
+        nint inAuthBuffer, uint inAuthBufferSize, out nint outAuthBuffer, out uint outAuthBufferSize, ref bool save,
+        PromptForWindowsCredentialsFlags dwFlags);
+
+    [DllImport("credui.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+    public static extern bool CredUnPackAuthenticationBuffer(int dwFlags, nint authBuffer, uint authBufferSize, StringBuilder? userName,
+        ref uint maxUserName, StringBuilder? domainName, ref uint maxDomainName, StringBuilder? password, ref uint maxPassword);
 }
 
