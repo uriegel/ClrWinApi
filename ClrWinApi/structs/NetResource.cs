@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 namespace ClrWinApi;
 
 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-public class NetResource
+public struct NetResource
 {
     public ResourceScope Scope;
     public ResourceType ResourceType;

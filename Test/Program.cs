@@ -13,7 +13,7 @@ var netResource = new NetResource()
     RemoteName = @"\\cas-storage\transfer"
 };
 
-var credentials = new NetworkCredential("", "", "");
+var credentials = new NetworkCredential("affe", "sdfsf", "sdfdsf");
 
 var userName = string.IsNullOrEmpty(credentials.Domain)
     ? credentials.UserName
