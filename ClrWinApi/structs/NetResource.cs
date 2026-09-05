@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
 
 namespace ClrWinApi;
 
-[StructLayout(LayoutKind.Sequential)]
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
 public class NetResource
 {
     public ResourceScope Scope;
