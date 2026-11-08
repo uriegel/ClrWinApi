@@ -23,7 +23,7 @@ public partial class ShellDataObject : IDataObject
 
         var format = Marshal.PtrToStructure<FormatEtc>(pFormatEtc);
 
-        if (format.cfFormat != CF_HDROP)
+        if (format.cfFormat != CF_HDROP && format.cfFormat != CF_PREFERREDDROPEFFECT)
             return DV_E_FORMATETC;
         if (format.ptd != 0)
             return DV_E_DVTARGETDEVICE;
@@ -43,9 +43,12 @@ public partial class ShellDataObject : IDataObject
             return E_POINTER;
 
         int result = QueryGetData(pFormatEtc);
-
         if (result != S_OK)
             return result;
+
+        var format = Marshal.PtrToStructure<FormatEtc>(pFormatEtc);
+        if (format.cfFormat == CF_PREFERREDDROPEFFECT)
+            return CreateDwordMedium(DROPEFFECT_COPY, pMedium); 
 
         Marshal.StructureToPtr(new StgMedium(), pMedium, false);
 
@@ -165,6 +168,32 @@ public partial class ShellDataObject : IDataObject
     public int DUnadvise(uint dwConnection) => unchecked((int)0x80004001);
 
     public int EnumDAdvise(nint ppenumAdvise) => unchecked((int)0x80004001);
+
+    int CreateDwordMedium(uint value, nint pMedium)
+    {
+        nint memory = Api.GlobalAlloc(GMEM_MOVEABLE, sizeof(uint));
+        if (memory == 0)
+            return E_OUTOFMEMORY;
+
+        nint pointer = Api.GlobalLock(memory);
+        if (pointer == 0)
+        {
+            Api.GlobalFree(memory);
+            return E_OUTOFMEMORY;
+        }
+
+        Marshal.WriteInt32(pointer, unchecked((int)value));
+        Api.GlobalUnlock(memory);
+
+        Marshal.StructureToPtr(new StgMedium
+        {
+            tymed = TYMED_HGLOBAL,
+            unionmember = memory,
+            pUnkForRelease = 0
+        }, pMedium, false);
+
+        return S_OK;
+    }   
 
     const string CFSTR_PREFERREDDROPEFFECT = "Preferred DropEffect";
     const uint GMEM_MOVEABLE = 0x0002;
