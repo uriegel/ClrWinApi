@@ -11,7 +11,7 @@
     <Description>P/Invoke for CLR Applications</Description>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/uriegel/ClrWinApi</PackageProjectUrl>
-    <Version>3.0.0</Version>
+    <Version>3.0.1</Version>
     <PackageReleaseNotes>.NET 8</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>

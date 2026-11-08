@@ -126,16 +126,7 @@ public partial class ShellDataObject : IDataObject
         Marshal.WriteIntPtr(ppenumFormatEtc, 0);
 
         if (dwDirection != DATADIR_GET)
-            return unchecked((int)0x80004001); // E_NOTIMPL
-
-        var format = new FormatEtc
-        {
-            cfFormat = CF_HDROP,
-            ptd = 0,
-            dwAspect = DVASPECT_CONTENT,
-            lindex = -1,
-            tymed = TYMED_HGLOBAL
-        };
+            return unchecked((int)0x80040064); // DV_E_FORMATETC
 
         var formats = new[]
         {
@@ -157,11 +148,14 @@ public partial class ShellDataObject : IDataObject
 
         var enumerator = new FormatEtcEnumerator(formats);
         var wrappers = new StrategyBasedComWrappers();
-        nint ptr = wrappers.GetOrCreateComInterfaceForObject(
+        nint unke = wrappers.GetOrCreateComInterfaceForObject(
             enumerator,
             CreateComInterfaceFlags.None);
 
-        Marshal.WriteIntPtr(ppenumFormatEtc, ptr);
+        int hr = Marshal.QueryInterface(unke, in FormatEtcEnumerator.IID_IEnumFORMATETC, out nint interfacePtr);
+        Marshal.Release(unke);
+        Marshal.ThrowExceptionForHR(hr);
+        Marshal.WriteIntPtr(ppenumFormatEtc, interfacePtr);
 
         return S_OK;
     }
