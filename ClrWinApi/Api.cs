@@ -25,7 +25,7 @@ public static class Api
             success = QueryServiceConfig2(service, ServiceConfig.Description, buffer, bytesNeeded, out bytesNeeded);
             if (!success)
                 return null;
-            var description = (ServiceDescription)Marshal.PtrToStructure(buffer, typeof(ServiceDescription));
+            var description = Marshal.PtrToStructure<ServiceDescription>(buffer);
             Marshal.FreeHGlobal(buffer);
             return description.Description;
         }
@@ -75,6 +75,9 @@ public static class Api
     [DllImport("user32.dll")]
     public static extern uint MapVirtualKey(uint code, MapType mapType);
     
+    [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+    public static extern ushort RegisterClipboardFormat(string lpszFormat);
+
     [DllImport("user32.dll")]
     public static extern int ToUnicode(uint virtKey, uint scanCode, byte[] keyState,
         [Out, MarshalAs(UnmanagedType.LPWStr, SizeParamIndex = 4)]
@@ -84,6 +87,18 @@ public static class Api
     [DllImport("user32.dll")]
     public static extern nint MonitorFromRect(ref Rect rect, MonitorDefaultTo defaultTo);
 
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    public static extern nint GlobalAlloc(uint uFlags, nuint dwBytes);
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    public static extern nint GlobalLock(nint hMem);
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    public static extern bool GlobalUnlock(nint hMem);
+
+    [DllImport("kernel32.dll", SetLastError = true)]
+    public static extern nint GlobalFree(nint hMem);
 
     [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
     public static extern nint LoadLibrary(string filename);

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <LangVersion>Preview</LangVersion>
@@ -11,14 +11,13 @@
     <Description>P/Invoke for CLR Applications</Description>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/uriegel/ClrWinApi</PackageProjectUrl>
-    <Version>2.7.1</Version>
-    <PackageReleaseNotes>CredUIPromptForWindowsCredentials</PackageReleaseNotes>
-		<FileVersion>2.7.1.0</FileVersion>
-		<AssemblyVersion>2.7.1.0</AssemblyVersion>
+    <Version>3.0.0</Version>
+    <PackageReleaseNotes>.NET 8</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <NoWarn>CS1591</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>    
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
